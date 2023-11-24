@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+         *{
+        box-sizing: border-box;
+         font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+         font-size: 30px; 
+       }
+       body{
+        background:linear-gradient(to left ,rgb(118, 208, 208),rgb(223, 151, 163),rgb(215, 177, 131),rgb(93, 196, 162));
+        
+       }
+        .container{
+            max-width: 100%;
+       } 
+       #input{
+        margin-top: 3%;
+        margin-left: 29%;
+        border-radius: 5px;
+        outline: none;
+        font-size: 23px;
+        padding: 8px;
+       }
+       #button{
+        margin-top: 3%;
+        margin-left: 2%;
+        color: gray;
+        width: 8%;
+        border-radius: 5px;
+        outline: none;
+        cursor: pointer;
+        font-size: 23px;
+        padding: 8px;
+       }
+       #seconddiv{
+        margin-top: 2%;
+        margin-left: 29%;
+        
+       
+       }
+       .task{
+        box-sizing: border-box;
+        border: 1px solid;
+        border-radius: 5px;
+        width: 45%;
+         display: flex; 
+        justify-content: space-between;
+        margin-bottom: 7px;
+        background-color: white;
+        border-color: black;
+        color: rgb(213, 85, 129);
+        font-size: 19px;
+        padding: 5px;
+       }
+       #input:focus{
+        background-color: #6dabcc;
+        color: white;
+       }
+       #button:hover{
+        background-color: #6dabcc;
+        color: white;
+       }
+       .del{
+        cursor: pointer;
+        background-color:white;
+        box-shadow: 0px 0px 2px ;
+        border-bottom: 1px solid rgb(46, 39, 39);
+        border-width:20px ;
+        height: 20px;
+        /* border: none; */
+        outline: none;
+       }
+       
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 style="margin-left: 38%; margin-top: 10%; font-size: larger; text-shadow: 0px 0px 15px white;color:rgb(35, 35, 118) ;">To DO List</h1>
+        <input type="text" name="input" id="input" placeholder="Enter the list" />
+        <button id="button">Add</button>
+        <div id="seconddiv">
+            <!-- <p id="item"></p> -->
+            <!-- <button id="todobutton">-</button>  -->
+        </div>
+    </div>
+      
+    <script>
+         let todoele = document.getElementById("input");
+        let tasklist = document.getElementById("seconddiv");
+
+        document.getElementById("button").onclick = function () {
+            if (todoele.value.length == 0) {
+                alert("Enter a task details")
+            }
+            else {
+                tasklist.innerHTML = tasklist.innerHTML + `   
+         <div class="task"> 
+             <span id="work">${todoele.value}</span>
+             <button class="del"></button>
+         </div> `
+                let alltasks = document.querySelectorAll('.del')
+                for (i = 0; i < alltasks.length; i++) {
+                    alltasks[i].onclick = function () {
+                        console.log(this)
+                        console.log(this.parentNode)
+                        this.parentNode.remove()
+                    }
+                }
+                todoele.value = " "
+            }
+        }
+
+    </script>
+</body>
+</html>
