@@ -19,7 +19,7 @@
        } 
        #input{
         margin-top: 3%;
-        margin-left: 29%;
+         margin-left: 35%; 
         border-radius: 5px;
         outline: none;
         font-size: 23px;
@@ -38,7 +38,7 @@
        }
        #seconddiv{
         margin-top: 2%;
-        margin-left: 29%;
+        margin-left: 35%;
         
        
        }
@@ -46,7 +46,7 @@
         box-sizing: border-box;
         border: 1px solid;
         border-radius: 5px;
-        width: 45%;
+        width: 48%;
          display: flex; 
         justify-content: space-between;
         margin-bottom: 7px;
@@ -74,13 +74,78 @@
         /* border: none; */
         outline: none;
        }
-       
+
+        @media screen and (min-width:450px) and (max-width:579px) {
+            body{
+                margin: 0%;
+                margin-left: 5%;
+                width: 578px;
+                height: 578px;
+            }
+            #button{
+                margin-top: 2%;
+                width: 15%;
+                font-size: 15px;
+            }
+            #input{
+                margin-top: 2%;
+                margin-left: 2%;
+                font-size: 18px;
+                padding: 6px;
+            }
+            #seconddiv{
+                margin-left: 2%;
+            }
+            .task{
+                width: 46%;
+                font-size:3px;
+                padding: 1px;
+            }
+            .del{
+                border-width: 15px;
+            }
+
+            
+            
+        } 
+        @media screen and (min-width:580px) and (max-width:998px) {
+            body{
+                margin: 0%;
+                margin-left: 5%;
+                width: 578px;
+                height: 578px;
+            }
+            #button{
+                margin-top: 2%;
+                width: 15%;
+                font-size: 15px;
+            }
+            #input{
+                margin-top: 2%;
+                margin-left: 2%;
+                font-size: 18px;
+                padding: 6px;
+            }
+            #seconddiv{
+                margin-left: 2%;
+            }
+            .task{
+                width: 46%;
+                font-size:3px;
+                padding: 1px;
+            }
+            .del{
+                border-width: 15px;
+            }
+
+            
+        }
 
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1 style="margin-left: 38%; margin-top: 10%; font-size: larger; text-shadow: 0px 0px 15px white;color:rgb(35, 35, 118) ;">To DO List</h1>
+    <div class="container-fluid col-12 col-sm-6 col-md-5 col-lg-6">
+        <h1 style="display: flex; justify-content: center; align-items: center; margin-top: 10%; font-size: larger; text-shadow: 0px 0px 15px white;color:rgb(35, 35, 118) ;">TO DO LIST</h1>
         <input type="text" name="input" id="input" placeholder="Enter the list" />
         <button id="button">Add</button>
         <div id="seconddiv">
